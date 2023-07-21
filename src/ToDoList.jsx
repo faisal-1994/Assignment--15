@@ -30,7 +30,11 @@ const TodoList = (props)=>{
                            return(
                             <tr>
                                 <td>{item}</td>
-                                <td><button onClick={()=>{remove(index)}}>Delete</button></td>
+                                <td>
+                                    <button onClick={()=>{remove(index)}}>
+                                        Delete
+                                    </button>
+                                </td>
                             </tr>
                            )
                            
