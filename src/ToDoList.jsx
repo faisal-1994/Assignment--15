@@ -20,8 +20,7 @@ const TodoList = (props)=>{
 
     }
     return(
-        <div>
-            
+        <div>            
             <table>
                 <tbody>
                     {
@@ -43,9 +42,7 @@ const TodoList = (props)=>{
                     }
                 </tbody>
             </table>
-
-            <h3>{list.length}</h3>
-            <h5>{item}</h5>
+            
             <h4 style={{textAlign:"center"}}>{props.title}</h4>
             <input onChange={getValueOfItem} type="text" placeholder="item"/>
             <button onClick={addToList}>Add the task</button>
