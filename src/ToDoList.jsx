@@ -11,14 +11,39 @@ const TodoList = (props)=>{
        
     }
     const addToList =()=>{
-        list.push(item)
+        list.push(item);
+        setList([...list])
     }
+    const remove = (index)=>{
+        list.splice(index,1);
+        setList([...list])
 
+    }
     return(
         <div>
-            <h5>{list.index}</h5>
+            
+            <table>
+                <tbody>
+                    {
+                        list.length!==0?(
+                        list.map((item,index)=>{
+                           return(
+                            <tr>
+                                <td>{item}</td>
+                                <td><button onClick={()=>{remove(index)}}>Delete</button></td>
+                            </tr>
+                           )
+                           
+                        })
+                        ):(<tr></tr>)
+                    }
+                </tbody>
+            </table>
+
+            <h3>{list.length}</h3>
+            <h5>{item}</h5>
             <h4 style={{textAlign:"center"}}>{props.title}</h4>
-            <input onChange={getValueOfItem} type="text" />
+            <input onChange={getValueOfItem} type="text" placeholder="item"/>
             <button onClick={addToList}>Add the task</button>
         </div>
     )
